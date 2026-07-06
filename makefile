@@ -24,7 +24,10 @@ APSRCS := ${shell find ${SOURCEDIR} -name '*.S'}
 
 OBJECTS := ${CSRCS:%=${BUILD_DIR}/%.o} ${ASRCS:%=${BUILD_DIR}/%.o} ${APSRCS:%=${BUILD_DIR}/%.o}
 
-all: ${BUILD_DIR}/${TARGET}.bin
+all:
+	bear -- make build
+
+build: ${BUILD_DIR}/${TARGET}.bin
 
 ${BUILD_DIR}/${TARGET}.bin: ${BUILD_DIR}/${TARGET}
 	${OBJCOPY} -O binary $< $@
