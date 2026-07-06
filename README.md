@@ -4,7 +4,11 @@
 
 ## Project Documentation
 
+[Project Documentation](./docs/project-docs/README.md)
+
 ## Notes
+
+[Notes](./docs/notes/README.md)
 
 ## Technical Documents
 
