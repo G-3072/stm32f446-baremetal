@@ -2,4 +2,4 @@
 
 # Documentation
 
-[DOCS](./docs/README.md)
+[DOCS](/docs/)
