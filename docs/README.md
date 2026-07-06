@@ -12,4 +12,4 @@
 
 # Personal notes
 
-[Personal Notes](/notes/)
+[Personal Notes](/docs/notes/)
