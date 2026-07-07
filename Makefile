@@ -49,3 +49,8 @@ ${BUILD_DIR}/%.S.o: %.S
 
 clean:
 	rm -rf ${BUILD_DIR}/**
+
+upload_wsl: all
+	
+
+

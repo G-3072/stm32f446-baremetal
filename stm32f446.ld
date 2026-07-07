@@ -7,8 +7,8 @@ _stack_origin = ORIGIN(RAM) + LENGTH(RAM);      /* Starting value for StackPoint
 
 MEMORY      /* Setting memory of stm32f446 according to chapters 2.2.3 and 2.2.4 of stm32f446 reference manual */
 {
-    RAM     (rwx) :     ORIGIN = 0x2000_0000,  LENGTH = 128K
-    FLASH   (rx)  :     ORIGIN = 0x0800_0000,  LENGTH = 512K
+    RAM     (rwx) :     ORIGIN = 0x20000000,  LENGTH = 128K
+    FLASH   (rx)  :     ORIGIN = 0x08000000,  LENGTH = 512K
 }
 
 SECTIONS    /* Defining sections of program. Only .text, .rodata, .data, .bss needed for pure C / asm. */
