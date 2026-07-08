@@ -1,4 +1,4 @@
-ENTRY(_start)     /* setting "_start" as entry point*/
+ENTRY(_start)     /* setting "ResetHandler" as entry point*/
 
 _MIN_STACK_SIZE = 0x400;      /* Minimum size reserved for stack */
 _MIN_HEAP_SIZE = 0x200;       /* Minimum size reserved for heap */
@@ -13,13 +13,13 @@ MEMORY      /* Setting memory of stm32f446 according to chapters 2.2.3 and 2.2.4
 
 SECTIONS    /* Defining sections of program. Only .text, .rodata, .data, .bss needed for pure C / asm. */
 {
-    .isr_vtable :       /* Section containint the interrupt vector table */
+    .vtable :       /* Section containint the interrupt vector table */
     {
         . = ALIGN(4);   /* Aligning to 4 Bytes since stm32f446 is 32 Bit system and 32 Bit = 4 Bytes */
-        _start_isr_vtable = .;      /* symbol containing start-VMA of this section */
-        KEEP(*(.isr_vtable))        /* KEEP to ensure vector table gets included in executable even if not referenced */
+        _start_vtable = .;      /* symbol containing start-VMA of this section */
+        KEEP(*(.vtable))        /* KEEP to ensure vector table gets included in executable even if not referenced */
         . = ALIGN(4);               
-        _end_isr_vtable = .;        /* symbol containing end-VMA of this section */
+        _end_vtable = .;        /* symbol containing end-VMA of this section */
     } > FLASH
 
     .text :       /* Section containing all instructions / code of program */
@@ -42,12 +42,12 @@ SECTIONS    /* Defining sections of program. Only .text, .rodata, .data, .bss ne
         _erodata = .;
     } > FLASH
 
-    _sidata = LOADADDR(.data);
+    _sidata = LOADADDR(.data);      /* .data section starting address (LMA) */
 
     .data :
     {
         . = ALIGN(4);
-        _sdata = .;
+        _sdata = .;     /* .data section starting address (VMA) */
         *(.data)
         *(.data*)
         . = ALIGN(4);

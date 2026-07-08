@@ -1,10 +1,9 @@
-[default_config]
-
+[[project]]
+path = "core"
 assembler = "gas"
 instruction_set = "arm"
 
-[opts]
-
-compiler = "arm-none-eabi-gcc"
+[project.opts]
+compiler = "arm-none-eabi-as"
 diagnostics = true
 default_diagnostics = true

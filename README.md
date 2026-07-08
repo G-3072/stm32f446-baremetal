@@ -18,4 +18,6 @@
 
 [Cortex-M4 Technical Reference manual](https://users.ece.utexas.edu/~valvano/EE345L/Labs/Fall2011/CortexM4_TRM_r0p1.pdf)
 
+[Cortex-M4 User Guide](https://developer.arm.com/documentation/dui0553/latest/)
+
 [ARMv7-M Architecture Reference manual](https://developer.arm.com/documentation/ddi0403/ee/?lang=en)
