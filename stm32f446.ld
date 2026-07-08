@@ -3,7 +3,7 @@ ENTRY(_start)     /* setting "_start" as entry point*/
 _MIN_STACK_SIZE = 0x400;      /* Minimum size reserved for stack */
 _MIN_HEAP_SIZE = 0x200;       /* Minimum size reserved for heap */
 
-_stack_origin = ORIGIN(RAM) + LENGTH(RAM);      /* Starting value for StackPointer (SP) = End address of RAM bc. Stack grows downward */
+_sp_init = ORIGIN(RAM) + LENGTH(RAM);      /* Starting value for StackPointer (SP) = End address of RAM bc. Stack grows downward */
 
 MEMORY      /* Setting memory of stm32f446 according to chapters 2.2.3 and 2.2.4 of stm32f446 reference manual */
 {

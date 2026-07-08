@@ -10,7 +10,7 @@ TARGET := out
 
 SRC_DIR := core
 BUILD_DIR := build
-INC_DIRS := ${filter %/inc, ${shell find ${SOURCEDIR} -type d}}
+INC_DIRS := ${filter %/inc, ${shell find ${SRC_DIR} -type d}}
 INC_FLAGS := ${addprefix -I,${INC_DIRS}}
 
 CFLAGS := -mcpu=cortex-m4 -ffreestanding -fno-builtin -Wall -Werror ${INC_FLAGS} -std=c11 -mfloat-abi=hard -mthumb -g3
@@ -18,9 +18,9 @@ ASFLAGS := -mcpu=cortex-m4
 LDFLAGS := -nostartfiles -nostdlib -T ${LINKERSCRIPT}
 
 
-CSRCS := ${shell find ${SOURCEDIR} -name '*.c'}
-ASRCS := ${shell find ${SOURCEDIR} -name '*.s'}
-APSRCS := ${shell find ${SOURCEDIR} -name '*.S'}
+CSRCS := ${shell find ${SRC_DIR} -name '*.c'}
+ASRCS := ${shell find ${SRC_DIR} -name '*.s'}
+APSRCS := ${shell find ${SRC_DIR} -name '*.S'}
 
 OBJECTS := ${CSRCS:%=${BUILD_DIR}/%.o} ${ASRCS:%=${BUILD_DIR}/%.o} ${APSRCS:%=${BUILD_DIR}/%.o}
 
