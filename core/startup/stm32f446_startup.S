@@ -12,9 +12,9 @@
 .word _sbss
 .word _ebss
 
-.weak main
-.global main
-.type main, %function
+.weak _main
+.global _main
+.type _main, %function
 
 .weak _start
 .type _start, %function
@@ -53,7 +53,7 @@ zero_bss_loop:
     cmp r1, r2
     bcc zero_bss
     
-    bl main
+    bl _main
 
     b _end
 

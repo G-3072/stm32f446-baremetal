@@ -1,5 +1,5 @@
 
-void main(void){
+void _main(void){
     int a = 5;
     for(;;){
 
