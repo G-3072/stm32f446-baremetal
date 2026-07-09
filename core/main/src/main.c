@@ -1,12 +1,12 @@
 
-void _main(void){
-
+void main(void){
     int a = 5;
-    int b = 3;
+    for(;;){
 
-    int c = a + b;
-
-    for(c = a + b; c > (a-b); b++){
-        a = a + 0;
-    }
+        if (a > 4){
+            a = 5;
+        }else {
+            a = 5;
+        }
+    };
 }

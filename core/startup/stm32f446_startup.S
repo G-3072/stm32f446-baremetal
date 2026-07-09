@@ -12,14 +12,13 @@
 .word _sbss
 .word _ebss
 
-.weak _main
-.global _main
-.type _main, %function
+.weak main
+.global main
+.type main, %function
 
-.global _start
 .weak _start
 .type _start, %function
-.section .text._start, "ax", %progbits
+.section .text._start 
 
 _start:
     /* set stack pointer register*/
@@ -54,7 +53,7 @@ zero_bss_loop:
     cmp r1, r2
     bcc zero_bss
     
-    bl _main
+    bl main
 
     b _end
 
@@ -185,12 +184,6 @@ _vectors:
     .word SPDIF_Rx_IRQHandler
     .word FMPI2C1_IRQHandler
     .word FMPI2C1_error_IRQHandler
-
-        .weak _sp_init
-        .thumb_set _sp_init,_end
-
-        .weak _start
-        .thumb_set _start,_end
 
         .weak NMI_Handler
         .thumb_set NMI_Handler,_end

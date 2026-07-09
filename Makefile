@@ -14,7 +14,7 @@ INC_DIRS := ${filter %/inc, ${shell find ${SRC_DIR} -type d}}
 INC_FLAGS := ${addprefix -I,${INC_DIRS}}
 
 CFLAGS := -mcpu=cortex-m4 -ffreestanding -fno-builtin -Wall -Werror ${INC_FLAGS} -std=c11 -mfloat-abi=hard -mthumb -g3
-ASFLAGS := -mcpu=cortex-m4
+ASFLAGS := -mcpu=cortex-m4 -g3
 LDFLAGS := -nostartfiles -nostdlib -T ${LINKERSCRIPT}
 
 
