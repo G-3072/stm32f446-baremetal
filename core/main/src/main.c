@@ -1,12 +1,22 @@
+#include <stdlib.h>
+#include <stdint.h>
 
 void _main(void){
-    int a = 5;
+    uint32_t* b;
+    uint32_t a = 5;
+
+    b = &a;
+    if (b == &a){
+
+    }
     for(;;){
 
         if (a > 4){
-            a = 5;
+            a = 3;
+            b += 4;
         }else {
             a = 5;
+            b -= 4;
         }
     };
 }

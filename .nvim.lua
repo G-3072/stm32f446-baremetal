@@ -1,6 +1,7 @@
 local dap = require("dap")
 
 local dap_cortex_debug = require("dap-cortex-debug")
+
 dap_cortex_debug.setup({
     debug = false,
     extension_path = nil,
